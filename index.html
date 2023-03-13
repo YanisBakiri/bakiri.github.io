@@ -6,8 +6,8 @@
     {
     position: fixed;
     bottom : 10px;
-    right: -760px;
-    opacity: 0.35;
+    right: -400px;
+    opacity: 0.30;
     }
     </style>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
@@ -29,53 +29,62 @@
     <link rel="stylesheet"  href="css/prism.css" />
     <script src="js/prism.js"></script>
     <meta charset="utf-8">
-    <title>Véhicule autonome</title>
+    <title>VÉHICULE AUTONOME</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header>
-      <h1>Véhicule autonome</h1>
+      <h1>VÉHICULE AUTONOME</h1>
       <nav>
         <ul>
-          <li><a href="#obj">Objectif</a></li>
-          <li><a href="#meo">Mise en oeuvre</a></li>
-          <li><a href="#pcp">Principe</a></li>
-          <li><a href="#ccpt">Conception</a></li>
-          <li><a href="#cdg">Codage</a></li>
-          <li><a href="#dmstr">Démonstration</a></li>
+          <li><a href="#obj">OBJECTIF</a></li>
+          <li><a href="#meo">MISE EN OEUVRE</a></li>
+          <li><a href="#pcp">PRINCIPE</a></li>
+          <li><a href="#ccpt">CONCEPTION</a></li>
+          <li><a href="#dmstr">DÉMONSTRATION</a></li>
+          <li><a href="#cdg">CODAGE</a></li>
         </ul>
       </nav>
     </header>
     <main>
+        <center style="color:#515151"><FONT size="6pt"><FONT face="Georgia"><br>Bienvenue sur mon site de robotique !</FONT></FONT></center>
+        <center><i><br><br><br>Depuis un certain temps, les constructeurs automobiles nous promettent des véhicules entièrement autonomes ! Ils viendraient nous chercher au pied de notre porte pour nous emmener à destination sans aucune action de notre part. C’est cette vision futuriste des choses qui m’a poussé à choisir ce sujet. Les nouvelles technologies améliorent les villes de jour en jour en y introduisant une autonomie bien marquée. C’est donc sur ce principe que j'ai eu l'envie de concevoir ce projet !</i></center>
       <section id="obj">
-        <h1> align="center">OBJECTIF</h1>
-        <p>Bienvenue sur le site de mon projet de robotique!<br>Mon projet consiste en un robot capable de se déplacer d'un point A à un point B. Le robot doit être capable de réaliser son trajet avec le plus court chemin. De plus, le robot doit également être capable de changer d'itinéraire si un obstacle se présente ou le contourner si aucune autre issue est possible.
+        <h2 id="titre1" style="color:#515151"><br><br>L'Objectif de mon projet : En quoi ça consiste</h2>
+        <p>
+Mon objectif est de réaliser un véhicule autonome capable de parcourir le plus court trajet entre deux points sur un plan hippodamien.
+Sur un circuit hippodamien composé de 16 sommets reliés entre eux sous forme de matrice 4x4, un véhicule composé de plusieurs capteurs sera asservi en position afin de maintenir la bonne direction entre deux sommets. De plus, le véhicule sera également équipé d’un autre capteur dans l’optique d’asservir le système en distance. Par ailleurs, le calcul du plus court trajet entre deux points sera déterminé par l’algorithme de Dijkstra à l’aide d’un dictionnaire traduisant le circuit hippodamien souhaité.
          </p>
       </section>
       <section id="meo">
-        <h2><br> align="center">MISE EN OEUVRE</h2>
-        <p>Ce projet a été réalisé comme sujet de TIPE (travaux d'initiative personnelle encadrés) de CPGE (classe préparatoire aux grandes écoles) portant sur le thème de la ville pour l'année 2022-2023. Au fil des années, les villes sont devenues plus intelligentes et autonomes avec les avancés technologiques. C'est pourquoi, j'ai donc décidé de concevoir une voiture autonome, un projet entrant complètement dans cette dynamique.<br><br>Afin de pouvoir modéliser ce concept, il faut impérativement que la ville soit un plan hippodamien. Un plan hippodamien est, en urbanisme, un type d'organisation de la ville dans lequel les rues sont rectilignes et se croisent en angle droit, créant des îlots de forme carrée ou rectangulaire. De très nombreuses villes avec un tel plan existent dans le monde entier. Exemple : New York, Barcelone, Pékin, Manhattan,...
+        <h2 id="titre2" style="color:#515151"><br>La mise en oeuvre : Le contexte de création</h2>
+        <p>Afin de pouvoir modéliser ce concept, il faut impérativement que la ville soit un plan hippodamien. Un plan hippodamien est, en urbanisme, un type d'organisation de la ville dans lequel les rues sont rectilignes et se croisent en angle droit, créant des îlots de forme carrée ou rectangulaire. De très nombreuses villes avec un tel plan existent dans le monde entier. Exemple : New York, Barcelone, Pékin, Manhattan,... Ainsi, ce véhicule autonome pourrait remplacer les bus, taxis ou encore faire guise de véhicule personnel.<br><br>
         </p>
-        <img src="img/barcelone.jpg" height="500" width="700">
-        <p>Ainsi, ce véhicule autonome pourrait remplacer les bus, taxis ou encore faire guise de véhicule personnel.</p>
+        <div style="text-align: center;">
+            <img src="img/barcelone.jpg" height="500" width="700" alt="Description de l'image">
+        </div>
+        <center><i>Photographie représentative du plan hippodamien de Barcelone, ville d’Espagne.</i></center>
 
 
       </section>
       <section id="pcp">
-        <h2><br> align="center">PRINCIPE</h2>
+        <h2 id="titre3" style="color:#515151"><br>Le principe : Comment ça marche ?</h2>
         <p>Le robot fonctionne de la manière suivante:</p>
         <ul>
           <li>L'utilisateur doit entrer le sommet de départ</li>
           <li>--------------------------------------------------arrivé</li>
         </ul>
-        <p>Le programme du robot renverra alors un graph du circuit avec les positions de départ (carré blanc), d'arrivée (croix blanche) ainsi que l'itinéraire en rouge:
+        <p>Le programme du robot renverra alors un graph du circuit avec les positions de départ (carré blanc), d'arrivée (croix blanche) ainsi que l'itinéraire en rouge:<br><br>
         </p>
-        <img src="img/principe_img1.png" height="475" width="475">
-        <p>Ici on a choisi le sommmet de départ "B" et le sommet d'arrivé "H".<br>Le programme du robot à ainsi trouvé le chemin entre ces deux sommets dont la longueur est la plus faible des chemins possible. La longueur d'un chemin est égale à la somme des poids de chacune des arêtes qui le constituent. Pour notre exemple, le plus court chemin : B-E-O-A-F-H à une longueur de 37. Dans la vie pratique, le poids sur les arêtes pourrait être le temps de trajet entre deux sommets.
+        <div style="text-align: center;">
+            <img src="img/principe_img1.png" height="475" width="475" alt="Description de l'image">
+        </div>
+        <center><i>Graphe représentant un plan hippodamien composé de 16 sommets.</i></center>
+        <p><br>Ici on a choisi le sommmet de départ "B" et le sommet d'arrivé "H".<br>Le programme du robot à ainsi trouvé le chemin entre ces deux sommets dont la longueur est la plus faible des chemins possible. La longueur d'un chemin est égale à la somme des poids de chacune des arêtes qui le constituent. Pour notre exemple, le plus court chemin : B-E-O-A-F-H à une longueur de 37. Dans la vie pratique, le poids sur les arêtes pourrait être le temps de trajet entre deux sommets. On utilisera ce graphe pour la démonstration.
         </p>
       </section>
       <section id="ccpt">
-        <h2><br> align="center">CONCEPTION</h2>
+        <h2 id="titre4" style="color:#515151"><br>La conception : De quoi c'est fait ?</h2>
         <p>Le véhicule est constitué de:</p>
         <ul>
           <li>Chassis (2x roues motrice - motoreducteurs CC/roue folle/interrupteur/coupleur de piles)</li>
@@ -89,90 +98,136 @@
           <li>Cable jumper</li>
         </ul>
         <p><br>Voici un schéma des branchements effectués :</p>
-        <img src="img/Branchement.png" height="500" width="700" >
+        <div style="text-align: center;">
+            <img src="img/branchement.png" height="500" width="700" alt="Description de l'image">
+        </div>
+      </section>
+      <section id="dmstr">
+        <h2 id="titre6" style="color:#515151"><br>Démonstration</h2>
+        <p>Voici une vidéo démonstration :</p>
       </section>
       <section id="cdg">
-        <h2><br> align="center">CODAGE</h2>
-        <p>Ce projet a été réalisé dans le language Python car c'est ce langage qui est au programme de CPGE. Pour ce faire, il a fallu transverser un code arduino dans l'Arduino uno. Ce code sert à "traduire" en quelque sorte le langage Python en langage Arduino. De plus, il faut télécharger le module pymata4 écrit par Alan Yorinks afin de coontroler la carte arduino à l'aide de nombreuse fonctions. Malheureusement, un cable entre la carte et l'ordinateur est nécessaire...<br><br> </p>
-        Voici le code entier:</p>
+        <h2 id="titre5" style="color:#515151"><br>Le codage : La clé du projet !</h2>
+        <p>Ce projet a été réalisé dans le language Python car c'est ce langage qui est au programme de CPGE. Pour ce faire, il a fallu transverser un code arduino dans l'Arduino uno. Ce code sert à "traduire" en quelque sorte le langage Python en langage Arduino. De plus, il faut télécharger le module <a href=https://github.com/MrYsLab/pymata4>pymata4</a> écrit par Alan Yorinks afin de controler la carte arduino à l'aide de nombreuse fonctions. Malheureusement, un cable entre la carte et l'ordinateur est nécessaire... À noter que pour executer le script complet, on doit utiliser un environnement de developpement qui ne bloque pas le code à l'affichage d'un graphe. Exemple : Spyder, ...<br> </p>
+        <h3 id="sous-titre0" style="color:#515151"><br>Modélisation du graphe</h3>
+        <p>Tout d'abord, le graphe doit être modéliser sous la forme d'un dictionnaire Python. En effet, il est possible de représenter un graphe avec Python en utilisant un dictionnaire qui associe à chaque sommet un sous-dictionnaire composé de ses sommets adjacents et de la pondération de l'arête incidente (<a href=https://math.univ-lyon1.fr/irem/Formation_ISN/formation_parcours_graphes/dijkstra/2_python_dico.html>source</a>). Pour la démonstration, on  a utiliser le graphe suivant :</p>
         <pre class="line-numbers"><code class="language-python">
-#Importation des modules
-import random
-import numpy as np
-from matplotlib.patches import Rectangle
-import matplotlib.pyplot as plt
-from pymata4 import pymata4 
-import time #importer la librairie temps
-import sys
+    G={'A':{'F':10,'C':4,'P':90,'O':3},
+       'B':{'E':6,'D':24,'I':7},
+       'C':{'N':4,'D':1,'A':4,'M':9},
+       'D':{'C':1,'O':16,'G':34,'B':24},
+       'E':{'J':14,'O':14,'B':6},
+       'F':{'M':11,'H':4,'A':10},
+       'G':{'N':76,'D':34,'I':12},
+       'H':{'P':19,'F':4},
+       'I':{'G':12,'B':7},
+       'J':{'L':8,'E':14},
+       'K':{'N':2,'M':68},
+       'L':{'O':5,'J':8,'P':23},
+       'M':{'F':11,'K':68,'C':9},
+       'N':{'K':2,'G':76,'C':4},
+       'O':{'A':3,'D':16,'E':14,'L':5},
+       'P':{'H':19,'A':90,'L':23}}
+    </code></pre>
+    <h3 id="sous-titre1" style="color:#515151"><br>Sommets de départ et d'arrivée</h3>
+        <p>Le script interroge l'utilisateur sur le sommet de départ et d'arrivé :</p>
+        <pre class="line-numbers"><code class="language-python">
+def depart():
+    '''
+    Entrée: Rien
+    Sortie: str
+    But: Retourner le sommet de départ
+    '''
+    entre=input("Quelle est votre sommet de départ ? ") #Questionner l'utilisateur sur le sommet de départ
+    while (entre not in G): #Répéter la question jusqu'à ce que l'utilisateur entre un sommet qui est présent dans le dictionnaire 
+        entre=input("\nQuelle est votre sommet de départ ? ")
+    return entre #Retourne le sommet de départ
 
-board =pymata4.Pymata4() #detection de la carte Arduino
-
-G={'A':{'F':10,'C':4,'P':90,'O':3},
-   'B':{'E':6,'D':24,'I':7},
-   'C':{'N':4,'D':1,'A':4,'M':9},
-   'D':{'C':1,'O':16,'G':34,'B':24},
-   'E':{'J':14,'O':14,'B':6},
-   'F':{'M':11,'H':4,'A':10},
-   'G':{'N':76,'D':34,'I':12},
-   'H':{'P':19,'F':4},
-   'I':{'G':12,'B':7},
-   'J':{'L':8,'E':14},
-   'K':{'N':2,'M':68},
-   'L':{'O':5,'J':8,'P':23},
-   'M':{'F':11,'K':68,'C':9},
-   'N':{'K':2,'G':76,'C':4},
-   'O':{'A':3,'D':16,'E':14,'L':5},
-   'P':{'H':19,'A':90,'L':23}}
-
-#Variables-Capteur de distance#
-trig=9 #pin capteur ultrason (digital)
-echo=8 #pin capteur ultrason (digital)
-distance=[]
-
-#Variables-Capteurs infrarouges#
-RIGHT=1 #pin capteur infrarouge droit (analog)
-LEFT=0 #pin capteur infrarouge gauche (analog)
-
-#Variables-Moteurs#
-GA=10 #pin moteur gauche poleA (digital)
-GB=5 #pin moteur gauche poleB   (digital)
-DA=11 #pin moteur droit poleA  (digital)
-DB=6 #pin moteur droit poleB  (digital)
-HIGH=255 #Vitesse Max
-LOW=0 #Vitesse nulle
-
-#Variables-Servomoteur#
-Servo_pin = 4 #pin Servomoteur
-anglec=90 #angle nulle
-angled=0 #angle droite
-angleg=180 #angle gauche
-
+def arrivée():
+    '''
+    Entrée: Rien
+    Sortie: str
+    But: Retourner le sommet de d'arrivée
+    '''
+    arrivé=input("\nQuelle est votre sommet d'arrivée ? ") #Questionner l'utilisateur sur le sommet d'arrivée
+    while (arrivé not in G): #Répéter la question jusqu'à ce que l'utilisateur entre un sommet qui est présent dans le dictionnaire 
+        arrivé=input("\nQuelle est votre sommet d'arrivée ? ")
+    return arrivé #Retourne le sommet d'arrivée
+</code></pre>
+    <h3 id="sous-titre2" style="color:#515151"><br>Algorithme de Dijsktra</h3>
+    <p>Afin de réaliser le plus court trajet, le script doit éxécuter le célèbre algorithme de Dijsktra afin d'obtenir une liste comprenant les sommets parcouru (du sommet de départ au sommet d'arrivée) :</p>
+    <pre class="line-numbers"><code class="language-python">
 #Variables-Dijkstra#
 chemin=[]
 
-#Orientation-véhicule
-LVoisin=[]
-Direction=[]
+def moore_dijkstra_1(G, s):
+    """
+     FONCTION QUI CALCULE TOUS LES PLUS COURTS CHEMINS DE L'ENTREE A CHACUN DES SOMMETS
+    """
+    inf = sum(sum(G[sommet][i] for i in G[sommet]) for sommet in G) + 1
+    global s_explore
+    global s_a_explorer
+    s_explore = {s : [0, [s]]}
+    s_a_explorer = {j : [inf, ""] for j in G if j != s}
+    for suivant in G[s]:
+        s_a_explorer[suivant] = [G[s][suivant], s]
+
+    while s_a_explorer and any(s_a_explorer[k][0] < inf for k in s_a_explorer):
+        s_min = min(s_a_explorer, key = s_a_explorer.get)
+        longueur_s_min, precedent_s_min = s_a_explorer[s_min]
+        for successeur in G[s_min]:
+            if successeur in s_a_explorer:
+                dist = longueur_s_min + G[s_min][successeur]
+                if dist < s_a_explorer[successeur][0]:
+                    s_a_explorer[successeur] = [dist, s_min]
+        s_explore[s_min] = [longueur_s_min, s_explore[precedent_s_min][1] + [s_min]]
+        del s_a_explorer[s_min]
+
+    return s_explore
+
+
+def affichage(G, entree, sortie):
+    """
+    FONCTION D'AFFICHAGE DU PLUS COURT CHEMIN ENTRE L'ENTREE ET LA SORTIE DU GRAPHE
+    """
+    moore_dijkstra_1(G, entree)
+    '''
+
+    print("Dans le graphe d\'origine {} dont les arcs sont :".format(entree))
+    for k in MonGraphe:
+        print(k, ":", MonGraphe[k])
+    '''
+    print()
+
+    for k in s_explore:
+        if sortie == k:
+            print("Le plus court chemin menant de {} à {} est ".format(entree, sortie), end="")
+            print("->".join(s_explore[k][1]))
+            chemin.append(s_explore[k][1])
+            print("Son poids est égal à {}".format(s_explore[k][0]))
+
+    for k in s_a_explorer:
+        if sortie == k:
+            print("Il n\'existe aucun chemin de {} à {}".format(entree, sortie))
+</code></pre>
+    <h3 id="sous-titre3" style="color:#515151"><br>Tracer du graphe</h3>
+    <p>Le tracer du graphe se réalise en 2 étapes. Premièrement, à partir du dictionnaire G traduisant le graphe, le script doit réussir à modéliser une liste des sommets dans un le meme ordre que notre plan hippodamien, ainsi qu'un liste des poids. Deuxièment, le script trace 16 carrés noirs (sommets) reliés entre eux. À partir des deux listes précédentes, le script pourra donc rajouter les noms des sommets ainsi que les poids sur les liens correspondants. De plus, avec les fonctions depart() et arrivée(). Le script pourra rajouter un carré blanc sur la position initialle du véhicule et une croix sur le sommet d'arrivée. Par ailleurs, à l'aide de l'itinéraire réalisé par l'algortithme de Dijsktra, le script tracera la route à suivre en rouge : 
+    <pre class="line-numbers"><code class="language-python">
+import numpy as np
+from matplotlib.patches import Rectangle
+import matplotlib.pyplot as plt
+
 Lmatgraph=[]
 Lpoids=[]
-mvm=[]
-issueb=[]
-
-
-########################################-Fonction qui affiche le graph-############################################
-def depart():
-    entre=input("Quelle est votre sommet de départ ? ")
-    while (entre not in G):
-        entre=input("\nQuelle est votre sommet de départ ? ")
-    return entre
-
-def arrivée():
-    arrivé=input("\nQuelle est votre sommet d'arrivé ? ")
-    while (arrivé not in G):
-        arrivé=input("\nQuelle est votre sommet d'arrivé ? ")
-    return arrivé
 
 def matrice(G):
+    '''
+    Entrée: Dictionnaire G
+    Sortie: Rien
+    But: Ajoute les listes des sommets/poids voulues dans deux listes initialiser en dehors de la fonction (afin de réutiliser celles-ci sans refaire le script)
+    '''
+    ###Le principe est de rechercher dans le dictionnaire un sommet ayant deux voisins et de placer ses voisins, puis les voisins de ses voisins, etc jusqu'à obtenir la liste complète
+    ###De même pour la liste des poids
     matgraph=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     nbrvois=[]
     poids=[]
@@ -425,6 +480,11 @@ def matrice(G):
 
 
 def graph(G,départ,arrivé):
+    '''
+    Entrée: Dictionnaire G, str départ, str arrivé
+    Sortie: Rien
+    But: Afficher le graphe
+    '''
     inddep=Lmatgraph[0].index(départ)
     indarr=Lmatgraph[0].index(arrivé)
     L=[]
@@ -660,102 +720,96 @@ def graph(G,départ,arrivé):
     
     plt.show()
     return ""
-    
-###################################################################################################################
-    
-##############################-Fonction qui détermine le plus court chemin-########################################
+</code></pre>
+    <h3 id="sous-titre4" style="color:#515151"><br>Contrôle des moteurs</h3>
+    <p>Le véhicule dispose de deux moteurs éléctriques. Afin de les contrôlers, on utilisera le module pymata4. En effet, à chaque utilisation d'un capteur ou actionneur, on devra placer la commande "board" avant chaque commande :</p>
+    <pre class="line-numbers"><code class="language-python">
+import random
+from pymata4 import pymata4 
+import time 
 
-def moore_dijkstra_1(G, s):
-    """
-     FONCTION QUI CALCULE TOUS LES PLUS COURTS CHEMINS DE L'ENTREE A CHACUN DES SOMMETS
-    """
-    inf = sum(sum(G[sommet][i] for i in G[sommet]) for sommet in G) + 1
-    global s_explore
-    global s_a_explorer
-    s_explore = {s : [0, [s]]}
-    s_a_explorer = {j : [inf, ""] for j in G if j != s}
-    for suivant in G[s]:
-        s_a_explorer[suivant] = [G[s][suivant], s]
+board =pymata4.Pymata4()
 
-    while s_a_explorer and any(s_a_explorer[k][0] < inf for k in s_a_explorer):
-        s_min = min(s_a_explorer, key = s_a_explorer.get)
-        longueur_s_min, precedent_s_min = s_a_explorer[s_min]
-        for successeur in G[s_min]:
-            if successeur in s_a_explorer:
-                dist = longueur_s_min + G[s_min][successeur]
-                if dist < s_a_explorer[successeur][0]:
-                    s_a_explorer[successeur] = [dist, s_min]
-        s_explore[s_min] = [longueur_s_min, s_explore[precedent_s_min][1] + [s_min]]
-        del s_a_explorer[s_min]
+#Variables-Moteurs#
+GA=10 #pin moteur gauche poleA (digital)
+GB=5 #pin moteur gauche poleB   (digital)
+DA=11 #pin moteur droit poleA  (digital)
+DB=6 #pin moteur droit poleB  (digital)
+HIGH=255 #Vitesse Max
+LOW=0 #Vitesse nulle
 
-    return s_explore
-
-
-def affichage(G, entree, sortie):
-    """
-    FONCTION D'AFFICHAGE DU PLUS COURT CHEMIN ENTRE L'ENTREE ET LA SORTIE DU GRAPHE
-    """
-    moore_dijkstra_1(G, entree)
+def droite():     
     '''
-
-    print("Dans le graphe d\'origine {} dont les arcs sont :".format(entree))
-    for k in MonGraphe:
-        print(k, ":", MonGraphe[k])
+    Entrée: Rien
+    Sortie: Rien
+    But: Faire tourner le véhicule dans le sens horaire
     '''
-    print()
-
-    for k in s_explore:
-        if sortie == k:
-            print("Le plus court chemin menant de {} à {} est ".format(entree, sortie), end="")
-            print("->".join(s_explore[k][1]))
-            chemin.append(s_explore[k][1])
-            print("Son poids est égal à {}".format(s_explore[k][0]))
-
-    for k in s_a_explorer:
-        if sortie == k:
-            print("Il n\'existe aucun chemin de {} à {}".format(entree, sortie))
-
-#########################################################################################################
-
-#########################################-Fonctions Moteurs-##########################################
-                                                                                                     
-def droite():                                                                                        
     board.pwm_write(DA,HIGH) #tourner à droite                                                       
     board.pwm_write(DB,LOW)                                                                          
     board.pwm_write(GA,LOW)                                                                          
     board.pwm_write(GB,HIGH)                                                                         
                                                                                                      
 def arret():
+    '''
+    Entrée: Rien
+    Sortie: Rien
+    But: Arrêter le véhicule
+    '''
     board.pwm_write(DA,LOW) #stop                                                                   
     board.pwm_write(DB,LOW)
     board.pwm_write(GA,LOW)
     board.pwm_write(GB,LOW)
 
 def toutdroit():
+    '''
+    Entrée: Rien
+    Sortie: Rien
+    But: Faire avancerle véhicule tout droit 
+    '''
     board.pwm_write(DA,LOW) #avancer tout droit
     board.pwm_write(DB,HIGH)
     board.pwm_write(GA,LOW)
     board.pwm_write(GB,HIGH)
 
 def gauche():
+    '''
+    Entrée: Rien
+    Sortie: Rien
+    But: Faire tourner le véhicule dans le sens trigonométrique
+    '''
     board.pwm_write(DA,LOW) #tourner à gauche
     board.pwm_write(DB,HIGH)
     board.pwm_write(GA,HIGH)
     board.pwm_write(GB,LOW)
 
 def gauche90():
+    '''
+    Entrée: Rien
+    Sortie: Rien
+    But: Faire tourner le véhicule dans le sens trigonométrique de π/2
+    '''
     gauche()
     time.sleep(0.7)
     arret()
     time.sleep(0.5)
 
 def droite90():
+    '''
+    Entrée: Rien
+    Sortie: Rien
+    But: Faire tourner le véhicule dans le sens horaire de π/2
+    '''
     droite()
     time.sleep(0.6)
     arret()
     time.sleep(0.5)
 
 def r180():
+    '''
+    Entrée: Rien
+    Sortie: Rien
+    But: Faire tourner le véhicule dans le sens trigonométrique ou le sens horaire de π
+    '''
     x=random.randint(0,1)
     if x==0:
         droite()
@@ -767,6 +821,14 @@ def r180():
         time.sleep(1.3)
         arret()
         time.sleep(0.5)
+</code></pre>
+
+    <h3 id="sous-titre5" style="color:#515151"><br>Suiveur de ligne</h3>
+    <p>Le robot utilise deux capteurs infrarouges pour suivre une ligne noire tracée sur un fond blanc au sol, qui sert de guide pour le robot. Les capteurs permettent au robot de différencier la ligne noire de l'arrière-plan blanc. Lorsque les deux capteurs ne détectent pas la ligne, le robot continue d'avancer. Si l'un des capteurs détecte la ligne, le robot doit tourner dans la direction correspondante pour se placer au centre de la ligne (<a href=https://www.tutoriel-arduino.com/suiveur-de-ligne-arduino/>source</a>) :</p>
+    <pre class="line-numbers"><code class="language-python">
+#Variables-Capteurs infrarouges#
+RIGHT=1 #pin capteur infrarouge droit (analog)
+LEFT=0 #pin capteur infrarouge gauche (analog)
 
 def gaucheb():
     board.pwm_write(DA,LOW) #avancer tout droit
@@ -779,8 +841,13 @@ def droiteb():
     board.pwm_write(DB,206)
     board.pwm_write(GA,LOW)
     board.pwm_write(GB,HIGH)
-    
+
 def avancer():
+    '''
+    Entrée: Rien
+    Sortie: Rien
+    But: Maintenir le véhicule sur la ligne
+    '''
     valeurIRd=[1,1]
     valeurIRg=[1,1]
     toutdroit()
@@ -810,12 +877,215 @@ def avancer():
     time.sleep(0.5)
     arret()
     time.sleep(0.5)
+</code></pre>
+    <p><br>Cependant, suivant la surface de contact ou le niveau de batterie du véhicule, il se peut que le véhicule ne soit pas dans la position souhaitée. C'est pourquoi, à l'aide d'un compas magnétique numérique, on pourra corriger sa position. Afin d'obtenir l'angle de direction, on s'aidera de deux fonctions :</p>
+    <pre class="line-numbers"><code class="language-python">
+import math
+
+#boussole
+declinationmagnetique=1 #Calibrage
+Xmin =63001#Calibrage
+Xmax =64469#Calibrage
+Ymin =50105 #Calibrage
+Ymax =51269#Calibrage
+Xsf=(Ymax-Ymin)/(Xmax-Xmin) #Calibrage
+Ysf=(Xmax-Xmin)/(Ymax-Ymin) #Calibrage
+Xoff=(((Xmax-Xmin)/2)-Xmax)*Xsf #Calibrage
+Yoff=(((Ymax-Ymin)/2)-Ymax)*Ysf #Calibrage
+ang=[] #Liste des angles
+X=[]
+Y=[]
+
+def the_call_back(data):
+    """
+    This is the callback function will return the Azimuth read from the device.
+    :param data: [pin_type, Device address, device read register, x LSB, x MSB,
+                  Y LSB, Y MSB, Z LSB, Z MSB]
+    """
+    # print the raw data returned
+    #print(data)
+    # indices into data to get values:
+    x = data[3] + (data[4] << 8)
+    y = data[5] + (data[6] << 8)
+    # z = data[7] + (data[8] << 8)
+    #X.append(x)
+    #Y.append(y)
+    x1=(x*Xsf)+Xoff
+    y1=(y*Ysf)+Yoff
+    X.append(x1)
+    Y.append(y1)
+    azimuth = (math.atan2(y1, x1) * 180.0 / math.pi)+declinationmagnetique
+    if azimuth<0:
+        azimuth+=360
+    ang.append(azimuth)
     
-def dépassement():
+def qmc5883l(my_board):
+    """Renvoie l'angle de direction"""
+    # device address = 13
+    my_board.set_pin_mode_i2c()
+    # initialize the qmc5883l
+    # this is the equivalent of void QMC5883LCompass::init() in the library.
+    # https://github.com/mprograms/QMC5883LCompass/blob/9f627ec5fcad7e7ddc15d7ed63c8bcc9ab940947/src/QMC5883LCompass.cpp#L69
+    # write a value of 1 to register 0xb of the device
+    # the first byte is the device address and next 2 bytes are what is being written
+    # to the device. 11 is the 0xB register, and 1 is the value we are writing.
+    my_board.i2c_write(13, [11, 1])
+    time.sleep(.1)
+    # now we need to set the device mode.
+    # we will set the mode using the same values used by the Arduino library.
+    MODE = 1
+    ODR = 12  # output data rate
+    RANGE = 16
+    OSR = 0  # OVER_SAMPLE_RATION
+    CONTROL_REGISTER_1 = 9
+    MODE_DATA = MODE | ODR | RANGE | OSR
+    # write the data to control register 1
+    my_board.i2c_write(13, [CONTROL_REGISTER_1, MODE_DATA])
+    time.sleep(.1)
+    # read the xyz registers - data will be returned in the callback
+    # the call back will calculate the azimuth
+    my_board.i2c_read(13, 0, 6, the_call_back)
+</code></pre>
+
+    <p><br>On peut ainsi obtenir la liste des angles de direction des vecteurs X, -X, Y, -Y lorsque le véhicule sera initialiser :<p>
+    <pre class="line-numbers"><code class="language-python">
+vect=[0,0,0,0]#X;-X;Y;-Y #droite; gauche; haut; bas
+
+def vecteur():
+    '''
+    Entrée: Rien
+    Sortie: Rien
+    But: Obtenir la liste des angles de direction des vecteurs X, -X, Y, -Y
+    '''
+    A=départ
+    B=LVoisin[0]
+    while len(ang)!=1:
+        qmc5883l(board)
+    if coordonnée(A)[0]==coordonnée(B)[0]:
+        if coordonnée(A)[1]< coordonnée(B)[1]:
+            vect[2]=ang[0]#Y
+            vect[3]=ang[0]+180#-Y
+            vect[0]=ang[0]+90#X
+            vect[1]=ang[0]-90#-X
+        else:
+            vect[3]=ang[0]#-Y
+            vect[2]=ang[0]+180#Y
+            vect[0]=ang[0]-90#X
+            vect[1]=ang[0]+90#-X
+    elif coordonnée(A)[1]==coordonnée(B)[1]:
+        if coordonnée(A)[0]< coordonnée(B)[0]:
+            vect[0]=ang[0]#X
+            vect[3]=ang[0]+90#-Y
+            vect[2]=ang[0]-90#Y
+            vect[1]=ang[0]+180#-X
+        else:
+            vect[1]=ang[0]#-X
+            vect[3]=ang[0]-90#-Y
+            vect[2]=ang[0]+90#Y
+            vect[0]=ang[0]+180#X
+    if vect[0]>360:
+        vect[0]=vect[0]-360
+    elif vect[0]<0:
+        vect[0]=vect[0]+360
+    if vect[1]>360:
+        vect[1]=vect[1]-360
+    elif vect[1]<0:
+        vect[1]=vect[1]+360  
+    if vect[2]>360:
+        vect[2]=vect[0]-360
+    elif vect[2]<0:
+        vect[2]=vect[0]+360
+    if vect[3]>360:
+        vect[3]=vect[1]-360
+    elif vect[3]<0:
+        vect[3]=vect[1]+360
+    return ""
+</code></pre>
+
+    <p><br>À présent, le script peut corriger la position du véhicule si celle-ci n'est pas correcte :</p>
+    <pre class="line-numbers"><code class="language-python">
+def detectDroite():
+    '''
+    Entrée: Rien
+    Sortie: Rien
+    But: Faire pivoter le véhicule dans le sens horaire jusqu'à ce qu'il retrouve la route
+    '''
+    detectD=[]
+    valueD,time_stamp=board.analog_read(RIGHT)
+    detectD.append(valueD)
+    while detectD[-1]<=100:
+        droiteb()
+        valueD,time_stamp=board.analog_read(RIGHT)
+        detectD.append(valueD)
+    arret()
+    time.sleep(0.5)
     return ""
     
-    
+def detectGauche():
+    '''
+    Entrée: Rien
+    Sortie: Rien
+    But: Faire pivoter le véhicule dans le sens trigonométrique jusqu'à ce qu'il retrouve la route
+    '''
+    detectG=[]
+    valueG,time_stamp=board.analog_read(LEFT)
+    detectG.append(valueG)
+    while detectG[-1]<=100:
+        gaucheb()
+        valueG,time_stamp=board.analog_read(LEFT)
+        detectG.append(valueG)
+    arret()
+    time.sleep(0.5)
+    return ""
+        
+
+def correction():
+    '''
+    Entrée: Rien
+    Sortie: Rien
+    But: Si nécessaire, faire pivoter le véhicule jusqu'à ce qu'il retrouve la route
+    '''
+    c=20
+    if Direction[-1]=="Haut":
+        if ang[-1]>vect[2]:
+            if abs(ang[-1]-vect[2])>=c:
+                detectGauche()
+        elif ang[-1]< vect[2]:
+            if abs(ang[-1]-vect[2])>=c:
+                detectDroite()
+    elif Direction[-1]=="Bas":
+        if ang[-1]>vect[3]:
+            if abs(ang[-1]-vect[3])>=c:
+                detectGauche()
+        elif ang[-1]< vect[2]:
+            if abs(ang[-1]-vect[3])>=c:
+                detectDroite()
+    elif Direction[-1]=="Droite":
+        if ang[-1]>vect[0]:
+            if abs(ang[-1]-vect[0])>=c:
+                detectGauche()
+        elif ang[-1]< vect[0]:
+            if abs(ang[-1]-vect[0])>=c:
+                detectDroite()
+    elif Direction[-1]=="Gauche":
+        if ang[-1]>vect[1]:
+            if abs(ang[-1]-vect[1])>=c:
+                detectGauche()
+        elif ang[-1]< vect[1]:
+            if abs(ang[-1]-vect[1])>=c:
+                detectDroite()
+    return ""
+</code></pre>
+
+    <h3 id="sous-titre6" style="color:#515151"><br>Initialisation du véhicule</h3>
+    <p>Afin que le script connaisse la direction initiale du véhicule, on interroge l'utilisateur :</p>
+    <pre class="line-numbers"><code class="language-python">
 def manuelle(G):
+    '''
+    Entrée: dictionnaire G
+    Sortie: Rien
+    But: Initialiser le véhicule
+    '''
     v=[]
     Voisin=0
     for cle,valeur in G.items():
@@ -842,8 +1112,17 @@ def manuelle(G):
     while a!=" ":
         a=input("\nLorsque votre véhicule est orienté, cliquez une fois sur espace : ")
     return ""
-        
-def coordonnée(sommet):      
+</code></pre>
+
+    <h3 id="sous-titre7" style="color:#515151"><br>Navigation</h3>
+    <p>Tout d'abord, on doit instaurer un système de coordonnées :</p>
+    <pre class="line-numbers"><code class="language-python">
+def coordonnée(sommet):
+    '''
+    Entrée: Sommet str
+    Sortie: Liste coord
+    But: Retourner le coordonnée du sommet
+    '''
     coord=[0,0]
     T = [Lmatgraph[0][idx: idx+4] for idx in range(0, 16, 4)]
     T[0],T[3]=T[3],T[0]
@@ -854,22 +1133,45 @@ def coordonnée(sommet):
                 coord[0]=k.index(j)
                 coord[1]=T.index(k)
                 break
-    return coord     
+    return coord 
+</code></pre>    
+    <p><br>Pour pouvoir naviguer, on se place dans une base X, Y, Z :</p>
+    <div style="text-align: center;">
+        <img src="img/principe_img2.png" height="475" width="475" alt="Description de l'image2">
+    </div>
+    <p>Ainsi, afin de diriger (X, -X, Y, -Y) le véhicule, le script effectue un calcul de coordonnée :</p>
+    <pre class="line-numbers"><code class="language-python">
+Direction=[]
 
 def direction(A,B):
+    '''
+    Entrée: Sommets A,B str
+    Sortie: Rien
+    But: Déterminer dans quelle direction doit se diriger le véhicule X, -X, Y, -Y
+    '''
     if coordonnée(A)[0]==coordonnée(B)[0]:
-        if coordonnée(A)[1]<coordonnée(B)[1]:
-            Direction.append("Haut")
+        if coordonnée(A)[1]< coordonnée(B)[1]:
+            Direction.append("Haut") #Y
         else:
-            Direction.append("Bas")
+            Direction.append("Bas") #-Y
     elif coordonnée(A)[1]==coordonnée(B)[1]:
-        if coordonnée(A)[0]<coordonnée(B)[0]:
-            Direction.append("Droite")
+        if coordonnée(A)[0]< coordonnée(B)[0]:
+            Direction.append("Droite") #X
         else:
-            Direction.append("Gauche")
+            Direction.append("Gauche") #-X
     return ""
-        
+</code></pre>
+
+    <p><br>Le script peut dès à présent déterminer le mouvement de rotation à effectuer afin que le véhicule soit dans la direction souhaitée. (En comparant la direction à l'instant t et celle souhaitée à l'instant t+1) :</p>
+    <pre class="line-numbers"><code class="language-python">
+mvm=[]
+
 def mouvement():
+    '''
+    Entrée: Rien
+    Sortie: Rien
+    But: Déterminer le mouvement de rotation à effectuer afin que le véhicule soit dans la direction souhaitée
+    '''
     if Direction[0]=="Haut":
         if Direction[1]=="Gauche":
             mvm.append("Gauche90")
@@ -907,6 +1209,23 @@ def mouvement():
         else:
             mvm.append("Rien")
     return ""
+</code></pre>
+
+    <h3 id="sous-titre8" style="color:#515151"><br>Éxecution des fonctions</h3>
+    <p>Pour finir, le script peut exécuter les fonctions pour commencer le processus. De plus, si une route est bloquée, l'itinéraire est modifiée :</p>
+    <pre class="line-numbers"><code class="language-python">
+import sys
+
+#Variables-Capteur de distance#
+trig=9 #pin capteur ultrason (digital)
+echo=8 #pin capteur ultrason (digital)
+distance=[]
+
+#Variables-Servomoteur#
+Servo_pin = 4 #pin Servomoteur
+anglec=90 #angle nulle
+angled=0 #angle droite
+angleg=180 #angle gauche
 
 try:
     board.set_pin_mode_servo(Servo_pin)
@@ -927,6 +1246,7 @@ try:
     print("\nVoici le graphe de votre circuit ! Le carré blanc est la position du véhicule, la croix blanche est le point d'arrivé. ")
     graph(G,départ,arrivé)
     manuelle(G)
+    vecteur()
     direction(départ,LVoisin[0])
     direction(départ,chemin[0][1])
     mouvement()
@@ -1035,13 +1355,17 @@ try:
         if distance[-1]>25:
             if mvm[0]=="Droite90":
                 droite90()
+                correction()
                 avancer()
             elif mvm[0]=="Gauche90":
                 gauche90()
+                correction()
                 avancer()
             elif mvm[0]=="R180":
+                correction()
                 avancer()
             elif mvm[0]=="Rien":
+                correction()
                 avancer()
             del(chemin[0][0])
             del(Direction[0])
@@ -1068,39 +1392,12 @@ except KeyboardInterrupt: #ctrl+c
     arret()
     board.shutdown()
     sys.exit(0)
-        </code></pre>
-        <p>Comme vous avez pu le voir, le code est assez long c'est pourquoi nous allons expliquer les différentes fonctions du code:</p>
-        <ul>
-          <li><u>départ()/ arrivée()</u></li>
-        <p>Ces fonctions questionnent l'utilsateur, afin de connaître sur quel sommet de départ est la voiture et quel est le sommet d'arrivé souhaité</p>
-          <li><u>matrice(G)</u></li>
-        <p>Cette fonction a pour but de créer une matrice du circuit à l'aide du dictionnaire</p>
-          <li><u>moore_dijkstra_1(G,s)/affichage(G,entree,sortie)</u></li>
-        <p>Ces fonctions ont pour but de calculer et d'afficher le chemin le plus court entre le sommet de départ et le sommet d'arrivé</p>
-          <li><u>graph(G,départ,arrivé)</u></li>
-        <p>Cette fonction a pour but d'afficher le graphe du circuit avec le chemin le plus court du sommet de départ au sommet d'arrivé</p>
-          <li><u>droite()/ arret()/ toutdroit()/ gauche()/ gauche90()/ droite90()/ r180()/ gaucheb()/ droiteb()</u></li>
-        <p>Ces fonctions ont pour but de controler le robot</p>
-          <li><u>avancer()</u></li>
-        <p>Cette fonction asservie le robot, lui permettant de suivre une ligne noir</p>
-          <li><u>manuele(G)</u></li>
-        <p>Cette fonction questionne l'utilisateur sur le sens et la direction du robot afin de les initialisers </p>
-          <li><u>coordonnée(sommet)</u></li>
-        <p>Cette fonction renvoie les coordonnées du sommet en argument</p>
-          <li><u>direction(A,B)</u></li>
-        <p>Cette fonction va permettre de determiner vers quelle direction le robot doit pivoter (X;Y;-X;-Y)</p>
-          <li><u>mouvement()</u></li>
-        <p>Cette fonction pivotera le robot dans le sens voulu en fonction de la direction à l'instant t et t+1 </p>
-        </ul>
+</code></pre>
 
-      </section>
-      <section id="dmstr">
-        <h2><br> align="center">DÉMONSTRATION</h2>
-        <p>Voici une vidéo démonstration :</p>
-      </section>
+        </ul>
     </main>
     <footer>
-      <p>Copyright 2023 BAKIRI Yanis</p>
+      <p>Copyright 2022 BAKIRI Yanis</p>
     </footer>
   <div id="scrollUp">
   <a href="#top"><img src="img/top.png"/></a>
