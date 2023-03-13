@@ -5,7 +5,7 @@ body {
 }
 
 header {
-  background-color: #333;
+  background-color: #515151;
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -15,6 +15,34 @@ header {
 
 header h1 {
   margin: 0;
+}
+
+#titre0{
+  text-align: center;
+}
+
+#titre1{
+  text-align: center;
+}
+
+#titre2{
+  text-align: center;
+}
+
+#titre3{
+  text-align: center;
+}
+
+#titre4{
+  text-align: center;
+}
+
+#titre5{
+  text-align: center;
+}
+
+#titre6{
+  text-align: center;
 }
 
 header nav {
